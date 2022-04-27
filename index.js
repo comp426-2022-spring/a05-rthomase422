@@ -46,7 +46,7 @@ const debug = args.debug || process.env.debug || false
 const log = args.log || process.env.log || true
 
 if (log === true) {
-    const WRITESTREAM = fs.createWriteStream('.data/log/access.log', {flags: 'a'})
+    const WRITESTREAM = fs.createWriteStream('access.log', {flags: 'a'})
     app.use(morgan('combined', {stream: WRITESTREAM}))
 } else {
     console.log("Log file not created")
